@@ -1,0 +1,222 @@
+IIS :
+
+https://www.youtube.com/watch?v=1VdxPWwtISA
+
+In IIS logs we have GET and POST command
+
+A Request for Comments (RFC) is a publication from the Internet Society (ISOC) and its associated bodies, most prominently the Internet Engineering Task Force (IETF), the principal technical development and standards-setting bodies for the Internet.
+An RFC describes methods, behaviors, research, or innovations applicable to the working of the Internet and Internet-connected systems.
+RFCs have since become official documents of Internet specifications, communications protocols, procedures, and events.
+
+
+
+Worker Process: Worker Process (w3wp.exe) runs the ASP.Net application in IIS. This process is responsible for managing all the request and response that are coming from the client system. All the ASP.Net functionality runs under the scope of the worker process.
+
+Application pool is basically a container wherein your application resides.
+ISOLATION is the main reason to use Application pools.
+
+IIS (Internet Information Services) is one of the most powerful web servers from Microsoft that is used to host your ASP.NET Web application and static websites. IIS has its own ASP.NET Process Engine to handle the ASP.NET request. ... Worker process is the heart of ASP.NET Web Application which runs on IIS.
+
+How to install IIS :
+CONTROL PANEL > PROGRAMS AND FEATURES > TURN WINDOWS FEATURES ON OR OFF > CHECK THE BOX FOR IIS IN THE NEXT WINDOW > CLICK OK
+
+Simplest way to connect or to open IIS :
+SERVER MANAGER on the task bar > tools > iis
+
+WEB PLATFORM INSTALLER : IT ALLOWS YOU TO INSTALL SOME COMPONENTS AND MODELS RELATED TO IIS AND FACILITATES TO WORK WITH THESE COMPONENTS.
+
+What is difference between static and dynamic Web page?
+For static web pages data do not changes until someone changes it manually and hence data is static in nature. On other hand for Dynamic web page data is first interoperate at server side and due to which it does not remain same on every call and this makes data dynamic in nature..
+
+DIFFERENCE BETWEEN http AND https : 
+HTTP is unsecured while HTTPS is secured. HTTP sends data over port 80 while HTTPS uses port 443. HTTP operates at application layer, while HTTPS operates at transport layer. ... No encryption in HTTP, with HTTPS the data is encrypted before sending.
+FTP - port number : 21
+
+Static application : HTML
+Dynamic Application : ASP.NET
+
+Dynamic websites : Facebook
+
+Google and other powerful search engines prefer static websites, seeing as they load very fast. What's more, Google is constantly motivating site owners to incorporate Accelerated Mobile Pages (AMP), and that particular open-source effort is generally static in nature (equivalent to the dynamic pages on the desktop).
+
+DNS : Domain Name Server
+
+The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+
+For example, the domain name www.example.com translates to the addresses 93.184. 216.34 (IPv4) and 2606:2800:220:1:248:1893:25c8:1946 (IPv6).
+
+
+Location for IIS logs :
+C:\inetpub\logs\LogFiles\W3SVC1
+
+On a standard Windows Server, IIS log files are found at %SystemDrive%\inetpub\logs\LogFiles by default. It's not uncommon for administrators or other IT personnel to switch the directory where they're stored if requirements change.
+
+What is IIS management?
+Stands for "Internet Information Services." IIS is a web server software package designed for Windows Server. The IIS Manager tool allows web administrators to modify website options, such as default pages, error pages, logging settings, security settings, and performance optimizations. 
+
+IIS offers new feature 
+Application Initialization: a feature that allows an administrator to configure certain applications to start automatically with server startup. This reduces the wait time experienced by users who access the site for the first time after a server reboot.[22]
+Splash page during application initialization: the administrator can configure a splash page to be displayed to the site visitor during an application initialization.[22]
+Centralized SSL certificate support: a feature that makes managing certificates easier by allowing the administrator to store and access the certificates on a file share.[24]
+Dynamic IP Address Restrictions: a feature that enables an administrator to dynamically block IPs or IP ranges that hit the server with a large number of requests[2
+CPU Throttling: a set of controls that allow the server administrator to control CPU usage by each application pool in order to optimize performance in a multi-tenant environment[29]
+
+Windows Process Activation Service (also known as WAS) is the process activation mechanism introduced within Internet Information Services v7.0.Windows Activation Service allows the developers to choose the most appropriate protocol for their needs.
+
+The Common Language Runtime (CLR), the virtual machine component of Microsoft .NET Framework, manages the execution of .NET programs.
+
+ISAPI (Internet Server Application Program Interface)
+The Internet Server Application Programming Interface (ISAPI) is an N-tier API of Internet Information Services (IIS), Microsoft's collection of Windows-based web server services. The most prominent application of IIS and ISAPI is Microsoft's web server.
+
+Microsoft's web server application software is called Internet Information Services, which is made up of a number of "sub-applications" and is very configurable. ASP.NET is one such slice of IIS, allowing a programmer to write web applications in their choice of programming language (VB.NET, C#, F#) that's supported by the Microsoft .NET CLR. ISAPI is a much lower-level programming system, giving much better performance, at the expense of simplicity.
+
+
+ISAPI (Internet Server Application Program Interface) is a set of Windows program calls that let you write a Web server application that will run faster than a common gateway interface (CGI) application. A disadvantage of a CGI application (or "executable file," as it is sometimes called) is that each time it is run, it runs as a separate process with its own address space, resulting in extra instructions that have to be performed, especially if many instances of it are running on behalf of users. Using ISAPI, you create a dynamic link library (DLL) application file that can run as part of the Hypertext Transport Protocol (HTTP) application's process and address space. The DLL files are loaded into the computer when HTTP is started and remain there as long as they are needed; they don't have to be located and read into storage as frequently as a CGI application.  
+
+Dynamic-link library (DLL) is Microsoft's implementation of the shared library concept in the Microsoft Windows and OS/2 operating systems.
+A shared library or shared object is a file that is intended to be shared by executable files and further shared object files. Modules used by a program are loaded from individual shared objects into memory at load time or runtime, rather than being copied by a linker when it creates a single monolithic executable file for the program 
+
+Recycling means the worker process that handles requests for that application pool is terminated and a new one started. This is generally done to avoid unstable states that can lead to application crashes, hangs, or memory leaks.
+
+ISAPI consists of two components: Extensions and Filters.[1] These are the only two types of applications that can be developed using ISAPI. Both Filters and Extensions must be compiled into DLL files which are then registered with IIS to be run on the web server.
+
+Recycling is a Windows process and we cannot control it. There are various reasons for which windows can automatically recycle the app pool.  Now if there are 100 libraries or dlls that need to be initialized after the app pool is recycled and a few of them(let’s say 5) do not load up for any reason, you have 95 available dlls that are not able to communicate to those 5. So you get the error based on those missing 5. 
+Application initialization is again a Windows feature.
+
+
+
+, worker process thread, Web config, Certificate binding
+a
+
+What is SSL certificate used for?
+An SSL certificate is a bit of code on your web server that provides security for online communications. When a web browser contacts your secured website, the SSL certificate enables an encrypted connection. It's kind of like sealing a letter in an envelope before sending it through the mail.
+
+Application Development
+
+Application development provides infrastructure for developing and hosting web applications. Use these features to create web content or extend the functionality of IIS. These technologies typically provide a way to perform dynamic operations that result in the creation of HTML output, which IIS then sends to fulfill client requests.
+
+Application Initialization perform expensive initialization tasks before serving web pages.
+
+Binding a certificate to a website in IIS means that you are activating the installed digital certificate and associating it with a particular website, port, and/or IP Address.
+
+Binding is the method that IIS uses to identify websites upon requests.
+
+APPDynamics : contains tabs like : Applications, User Experience, Databases, Servers, Analytics, Dashboards & Reports, Alert & Respond
+
+It gives us information to optimize the application and also to fix the issues with application.
+
+We need to create the connection with the respective components like Applications, databases or servers to analyze the data. Without creating connection it's not possible.
+This connection will get created through interface/s provided by AppD tool.
+
+Through Alerts & respond we can send email alerts to the corresponding team to act.
+
+REST : Representational State Transfer
+
+Representational state transfer (REST) is a software architectural style which uses a subset of HTTP.[1] It is commonly used to create interactive applications that use Web services. A Web service that follows these guidelines is called RESTful. Such a Web service must provide its Web resources in a textual representation and allow them to be read and modified with a stateless protocol and a predefined set of operations. This approach allows interoperability between the computer systems on the Internet that provide these services. REST is an alternative to, for example, SOAP as way to access a Web service.[2]
+
+What is a Load Balancer? 
+Load balancing is defined as the methodical and efficient distribution of network or application traffic across multiple servers in a server farm. Each load balancer sits between client devices and backend servers, receiving and then distributing incoming requests to any available server capable of fulfilling them.
+
+types of load balancers: Application Load Balancers, Network Load Balancers, and Classic Load Balancers. Amazon ECS services can use either type of load balancer. Application Load Balancers are used to route HTTP/HTTPS (or Layer 7) traffic.
+
+Load balancing Algos types :
+a. Round Robin
+b. Least connections
+request sent to the least used server in the network
+c. IP Hash
+request sent to the server based on client IP - ONLY THOsE SERVERS which are specific to that client's IP address are needs to be given preference - example IRCTC website  
+
+Sticky session : every time a request is made from the browser a sessionID gets generated and is saved with the browser cache
+
+What is a worker thread?
+Worker thread is a continuous parallel thread that runs and accepts messages until the time it is explicitly closed or terminated. Messages to a worker thread can be sent from the parent thread or its child worker threads. ... Worker can have logic that gets executed parallel for each of the messages that it receives
+
+A thread is the unit of execution within a process. A process can have anywhere from just one thread to many threads.
+With the help of Process explorer we can view the threads associated with a process.
+
+WEB.Config file :
+you will find the web.config file at below location :
+
+C:\inetpub\wwwroot\WEBPHYS
+web. config file is a xml based configuration file used in ASP.NET based application to manage various settings that concerned with configuration of our website. ... The ASP.NET framework uses a hierarchical configuration system. You can place a `web. config file in any subdirectory of an application. It consists of connection string.
+
+The web.config is a file that is read by IIS and the ASP.NET Core Module to configure an app hosted with IIS.
+
+Server - Machine.config
+
+root web - web.config
+website - web.config
+Application root directory - web.config
+
+
+The Dynatrace Software Intelligence Platform uses artificial intelligence to deliver application performance monitoring (APM), artificial intelligence for operations (AIOps), IT infrastructure monitoring, digital experience management (DEM), and digital business analytics capabilities.
+For real user monitoring, Dynatrace OneAgent injects a JavaScript tag into the HTML of each application page that is rendered by your web servers. With these tags in place, the agent can monitor the response times and performance experienced by your customers in their mobile and desktop browsers.
+
+The Lightweight Directory Access Protocol (LDAP /ˈɛldæp/) is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network.[1] Directory services play an important role in developing intranet and Internet applications by allowing the sharing of information about users, systems, networks, services, and applications throughout the network.
+A common use of LDAP is to provide a central place to store usernames and passwords. This allows many different applications and services to connect to the LDAP server to validate users.[4]
+
+Best methods to Improve Window's Server Performance?
+Use a dedicated drive for the pagefile.
+Keep your hard disks defragmented.
+Use the NTFS (New Technology file system) file system.
+Remove seldom-used utilities.
+Disable unused services.
+Log off.
+Adjust the server response.
+Configure Caching.
+Use CDN.
+
+FAT - FILE ALLOCATION TABLE :
+The FAT file system is characterized by the file allocation table (FAT), which is really a table that resides at the very "top" of the volume. To protect the volume, two copies of the FAT are kept in case one becomes damaged.  Updating the FAT table is very important as well as time consuming. If the FAT table is not regularly updated, it can lead to data loss.The FAT file system is best for drives and/or partitions under approximately 200 MB, because FAT starts out with very little overhead.Preferably, when using drives or partitions of over 200 MB the FAT file system should not be used. This is because as the size of the volume increases, performance with FAT will quickly decrease
+
+NT file system (NTFS), which is also sometimes called the New Technology File System, is a process that the Windows NT operating system uses for storing, organizing, and finding files on a hard disk efficiently. ... Performance: NTFS allows file compression so your organization can enjoy increased storage space on a disk.
+
+Which is better FAT or NTFS?
+The biggest disadvantage of using the NTFS file system is compatibility: Many removable devices, such as Android smartphones don't support NTFS. While Mac OS X can read support for NTFS drives, but it can't write to NTFS drives without third-party software.
+
+HPFS - High Performance File System : HPFS maintains the directory organization of FAT, but adds automatic sorting of the directory based on filenames.HPFS is best for drives in the 200-400 MB range. 
+Because of the overhead involved in HPFS, it is not a very efficient choice for a volume of under approximately 200 MB. In addition, with volumes larger than about 400 MB, there will be some performance degradation. You cannot set security on HPFS under Windows NT.
+
+File Server : A dedicated server is designed specifically for use as a file server, with workstations attached for reading and writing files and databases. A file server does not normally perform computational tasks or run programs on behalf of its client workstations.
+
+RAID (/reɪd/; "Redundant Array of Inexpensive Disks"[1] or "Redundant Array of Independent Disks"[2]) is a data storage virtualization technology that combines multiple physical disk drive components into one or more logical units for the purposes of data redundancy, performance improvement, or both.
+
+A domain controller (DC) is a server computer[1][2] that responds to security authentication requests within a computer network domain. It is a network server that is responsible for allowing host access to domain resources. It authenticates users, stores user account information and enforces security policy for a domain.[3] It is most commonly implemented in Microsoft Windows environments (see Domain controller (Windows)), where it is the centerpiece of the Windows Active Directory service.
+
+Active Directory (AD) is a directory service developed by Microsoft for Windows domain networks. A server running the Active Directory Domain Service (AD DS) role is called a domain controller. It authenticates and authorizes all users and computers in a Windows domain type network. Assigning and enforcing security policies for all computers and installing or updating software. For example, when a user logs into a computer that is part of a Windows domain, Active Directory checks the submitted password and determines whether the user is a system administrator or normal user.[4] Also, it allows management and storage of information, provides authentication and authorization mechanisms, and establishes a framework to deploy other related services: Certificate Services, Active Directory Federation Services, Lightweight Directory Services, and Rights Management Services.[5]
+
+Active Directory uses Lightweight Directory Access Protocol (LDAP) versions 2 and 3, Microsoft's version of Kerberos,[6] and DNS.[7]
+
+Every IP address is always accompanied by the subnet mask
+the subnet mask reveals who are the neighbours in our network
+
+ipconfig - gives information about IPaddress, DNS, Gateway, refreshes DHCP and DNS settings
+Ipconfig/all : it gives the MAC address - it gives 2nd layer or the data layer
+Ipconfig : it gives ip address of our computer which is the 3rd layer or the network layer
+
+DATA LINK LAYER DEALS WITH THE MAC ADDRESS - the address with the '-' symbol in it
+NETWORK LAYER DEALS WITH THE IP ADDRESS - the address with the '.' symbol in it 
+
+nslookup (from name server lookup) is a network administration command-line tool for querying the Domain Name System (DNS) to obtain domain name or IP address mapping, or other DNS records.
+
+Tracert is used to trace the route about how the packets from my computer are reaching the other computer.
+Netstat command will give you information about active connections you have over the network.
+
+A public-key infrastructure (PKI) is a set of roles, policies, hardware, software and procedures needed to create, manage, distribute, use, store and revoke digital certificates and manage public-key encryption. The purpose of a PKI is to facilitate the secure electronic transfer of information for a range of network activities such as e-commerce, internet banking and confidential email.
+
+OSI Model Explained: The OSI 7 Layers
+Physical Layer. - Trasmits raw bit stream over the physical medium
+Data Link Layer.  - defines the format of the data on the network
+Network Layer. - decides which physical path the data will take
+Transport Layer. - transmits data using transmission protocols including TCP and UDP
+Session Layer. - Maintains connections and is responsible for controlling ports and sessions
+Presentation Layer. The presentation layer prepares data for the application layer and it the layer where data encryption occurs
+Application Layer. The application layer is used by end-user software such as web browsers and email clients. ...
+
+Dynamic Host Configuration Protocol (DHCP) is a network management protocol used to automate the process of configuring devices on IP networks, thus allowing them to use network services such as DNS, NTP, and any communication protocol based on UDP or TCP.
+
+A device connected to the network, requests an IP address from the DHCP server using the DHCP protocol;[1] the server assigns a unique address to the device, identifying it for TCP/IP communication, and supplies other network configuration parameters.[1] In the absence of a DHCP server, a device that needs an IP address must be manually assigned a static address by a network administrator.
+A DHCP server must be present on the network.
+Many routers and residential gateways can act as DHCP servers
+
+A media access control address (MAC address) is a unique identifier assigned to a network interface controller (NIC) for use as a network address in communications within a network segment.
