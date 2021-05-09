@@ -1,0 +1,42 @@
+A subnet is a range of IP addresses in the VNet. You can divide a VNet into multiple subnets for organization and security. Each NIC in a VM is connected to one subnet in one VNet. NICs connected to subnets (same or different) within a VNet can communicate with each other without any extra configuration.
+
+A subnetwork or subnet is a logical subdivision of an IP network. The practice of dividing a network into two or more networks is called subnetting. Computers that belong to the same subnet are addressed with an identical most-significant bit-group in their IP addresses.
+
+NIC (NETWORK INTERFACE) - A NIC is a component which holds the Public IP and the private IP of the VM. ... When creating a virtual machine using the Azure portal, the portal creates one network interface with default settings for you.
+
+Virtual Machine scale set : Virtual machine scale sets are an Azure compute resource that you can use to deploy and manage a set of idential VMs.
+
+Availability set : It is basically a group of servers wherein we can load balanced the workload for high availability.
+
+Each virtual machine in the Availability Set is assigned an Update domain and Fault domain by the Azure platform. Fault Domain. Fault domains define the group of virtual machines that share a common power source and network switch. Each and every fault domain contains some racks and each rack contains virtual machine.
+
+1. do scale sets work with Azure availability sets ?
+Ans : Yes, A scale set is an implicit availability set with 5 fault doamins and 5 update domains.
+
+
+Azue Active Directory :
+
+Azure Active Directory is an identity and access management system. It is used to grant access to your employees to specific products and  services in your network.
+example salesforce.com, Office 365
+
+Azure Service Fabric : it's a distributed systems platform that makes it easy to package, deploy and manage scalable and reliable microservices. This is the system which actually controls network, storage and compute which are basically the critical components of the cloud. it runs cloud we can say.
+
+what is VNet ?
+It is the representation of your own network in the cloud. It logically isolates your instances.
+
+Managed Disks : while creating a machine the azure fabric manages all your disk which are assigned to VM are known as managed disks. The number of managed disks per subscription is limited to 2000 by default.
+
+
+What are stateful and stateless microservices for Service Fabric ?
+Stateless microservices (such as protocol gateways and web proxies)  do not maintain a mutable state outside a request and it's response from the service. Azure cloud services worker roles are an example of a stateless service.
+Stateful microservices (such as user accounts, databases, devices, shopping carts and queues) maintain a mutable, state beyond the request and its response.
+
+what is an application partition ?
+
+
+Lift-and-shift – also known as rehosting – is a migration strategy that involves moving data and applications from an on-premises location to Azure-based virtual machines in the cloud. ... Lift-and-shift allows organisations to keep running their applications with minimal changes and disruption.
+
+In 2011 Gartner outlined the 5 different strategic R's for application migration to the cloud: Rehost, replatform,repurchasing,Refactor, Revise, and Replace. 
+
+
+https://www.youtube.com/watch?v=_aH6DEMBlJo
